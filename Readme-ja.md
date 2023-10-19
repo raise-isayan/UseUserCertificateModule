@@ -1,13 +1,15 @@
-Android の User証明書の利用
+Android アプリの User 証明書の利用
 =============
+
+Language/[English](Readme.md)
 
 ## 概要
 
-Android 7以降のOSにてユーザ証明書を信頼しなくなっています｡
+Android 7以降のOSにおいてユーザ証明書をデフォルトでは信頼しなくなっています｡
 
 - https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html
 
-本 Xposed Module は､ユーザ証明書にインストールされた証明書を無条件で信頼するようになります｡
+この Xposed Module は､ユーザ証明書にインストールされた証明書を無条件で信頼するようになります｡
 
 ### Magisk Module をインストール
 
