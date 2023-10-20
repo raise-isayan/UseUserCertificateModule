@@ -19,7 +19,7 @@ This Xposed Module will unconditionally trust the certificate installed in the u
 
 ### Install Xposed Module
 
-1. Install Xposed Module in the "OverrideSysPropModule" folder.
+1. Install Xposed Module in the "UseUserCertificate" folder.
 
 ````sh
 cd UseUserCertificate\app\release
