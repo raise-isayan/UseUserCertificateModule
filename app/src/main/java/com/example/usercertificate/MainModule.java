@@ -24,10 +24,12 @@ public class MainModule implements IXposedHookLoadPackage {
         XposedHelpers.findAndHookMethod("android.security.net.config.NetworkSecurityConfig$Builder", lparam.classLoader, "getEffectiveCertificatesEntryRefs", new XC_MethodHook() {
             @Override
             protected void beforeHookedMethod(XC_MethodHook.MethodHookParam param) throws Throwable {
+                super.beforeHookedMethod(param);
             }
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                Object origin =  XposedHelpers.callMethod(param.thisObject,"getEffectiveCertificatesEntryRefs");
+                super.afterHookedMethod(param);
+                Object origin =  param.getResult();
                 Object source = XposedHelpers.callStaticMethod(UserCertificateSource, "getInstance");
                 Object userCert = XposedHelpers.newInstance(CertificatesEntryRef, source, true);
                 XposedHelpers.callMethod(origin, "add", userCert);
