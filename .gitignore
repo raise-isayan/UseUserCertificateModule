@@ -1,3 +1,4 @@
+*.zip
 *.iml
 .gradle
 .idea
